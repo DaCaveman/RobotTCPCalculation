@@ -145,7 +145,7 @@ def TCP_Calc(spX,spY,spZ,srZ,srY,srX):
     bestFitBase, bestFitRadius = fitSphere(spX, spY, spZ)
 
     #Creating an position matrix from the best fitted base
-    base=np.array([bestFitBase[0],bestFitBase[1],bestFitBase[2],1])
+    base=np.array([bestFitBase[0],bestFitBase[1],bestFitBase[2],1], dtype=object)
 
     #search for the best fitted position for TCP calculation
     qualityPerPoint=[]
@@ -257,7 +257,7 @@ def main():
                 ax.set_xlabel('$x$ (mm)',fontsize=16)
                 ax.set_ylabel('\n$y$ (mm)',fontsize=16)
                 zlabel = ax.set_zlabel('\n$z$ (mm)',fontsize=16)
-                plt.show()
+                plt.show(block=False)
                 # plt.savefig('steelBallFitted.pdf', format='pdf', dpi=300, bbox_extra_artists=[zlabel], bbox_inches='tight')
 
 if __name__ == '__main__':
